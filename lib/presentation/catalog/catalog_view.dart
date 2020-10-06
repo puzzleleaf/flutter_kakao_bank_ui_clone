@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-class MyPage extends StatelessWidget {
+class CatalogView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff343B57),
-      body: Container(
-      ),
+
+      appBar: AppBar(),
     );
   }
 }
