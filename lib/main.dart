@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kakao_bank/blocs/home/home_cubit.dart';
 import 'package:kakao_bank/presentation/home/home_page.dart';
+import 'package:kakao_bank/presentation/main/main_page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +19,14 @@ class MyApp extends StatelessWidget {
           elevation: 0.0,
         ),
       ),
-      home: HomePage()
+      routes: {
+        '/': (context) {
+          return BlocProvider(
+            create: (_) => HomeCubit(),
+            child: HomePage(),
+          );
+        }
+      },
     );
   }
 }
