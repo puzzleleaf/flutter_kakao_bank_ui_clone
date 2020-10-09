@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class AccountCard extends StatelessWidget {
+class SavingAccountCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color(0xffFAE04B),
+        color: Color(0xffff5a4B),
       ),
       width: double.infinity,
-      height: 220,
+      height: 160,
       child: Padding(
         padding: const EdgeInsets.only(
           left: 20,
@@ -19,6 +19,7 @@ class AccountCard extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,7 +28,7 @@ class AccountCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '월급! ★',
+                      '자유적금',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -39,7 +40,7 @@ class AccountCard extends StatelessWidget {
                       '1234-56-78901112',
                       style: TextStyle(
                         fontSize: 11,
-                        color: Color(0xffD8C441),
+                        color: Colors.black.withOpacity(0.4),
                       ),
                     )
                   ],
@@ -47,39 +48,17 @@ class AccountCard extends StatelessWidget {
                 Icon(
                   Icons.more_vert,
                   size: 25,
-
+                  color: Colors.black.withOpacity(0.4),
                 )
               ],
             ),
             Text(
-              "금액보기",
+              "1,234,567원",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
-                color: Color(0xffD8C441),
+                color: Colors.black,
               ),
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    "이체",
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Text(
-                  "|",
-                  style: TextStyle(
-                    color: Color(0xffD8C441),
-                  ),
-                ),
-                Expanded(
-                  child: Text(
-                    "카드이용내역",
-                    textAlign: TextAlign.center,
-                  ),
-                )
-              ],
             ),
           ],
         ),

@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 class AdCard extends StatelessWidget {
   final String title;
   final String contents;
-  final EdgeInsetsGeometry margin;
 
-  AdCard({this.title, this.contents, this.margin});
+  AdCard({this.title, this.contents});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: margin,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
