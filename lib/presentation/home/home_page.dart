@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kakao_bank/blocs/home/home_cubit.dart';
 import 'package:kakao_bank/presentation/catalog/catalog_page.dart';
 import 'package:kakao_bank/presentation/main/main_page.dart';
+import 'package:kakao_bank/presentation/more/more_page.dart';
+import 'package:kakao_bank/presentation/notification/notification_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -18,6 +20,7 @@ class HomePage extends StatelessWidget {
                 },
                 currentIndex: state,
                 type: BottomNavigationBarType.fixed,
+                backgroundColor: Colors.white,
                 showSelectedLabels: false,
                 showUnselectedLabels: false,
                 selectedItemColor: Colors.black,
@@ -65,6 +68,12 @@ class HomePage extends StatelessWidget {
       case 1:
         context.bloc<HomeCubit>().getCatalog();
         break;
+      case 2:
+        context.bloc<HomeCubit>().getNotification();
+        break;
+      case 3:
+        context.bloc<HomeCubit>().getMore();
+        break;
     }
   }
 
@@ -72,8 +81,12 @@ class HomePage extends StatelessWidget {
     switch(index) {
       case 0:
         return MainPage();
-      default:
+      case 1:
         return CatalogPage();
+      case 2:
+        return NotificationPage();
+      case 3:
+        return MorePage();
     }
   }
 }

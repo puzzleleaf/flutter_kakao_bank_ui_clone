@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AdCard extends StatelessWidget {
+class MainAdCard extends StatelessWidget {
   final String title;
-  final String contents;
+  final String content;
 
-  AdCard({this.title, this.contents});
+  MainAdCard({this.title, this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class AdCard extends StatelessWidget {
                   height: 3,
                 ),
                 Text(
-                  contents,
+                  content,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),

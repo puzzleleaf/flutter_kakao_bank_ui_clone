@@ -8,7 +8,7 @@ class CheckingAccountCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: Color(0xffFAE04B),
       ),
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       height: 220,
       child: Padding(
         padding: const EdgeInsets.only(
@@ -27,7 +27,7 @@ class CheckingAccountCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '월급! ★',
+                      'Checking Account ★',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -52,7 +52,7 @@ class CheckingAccountCard extends StatelessWidget {
               ],
             ),
             Text(
-              "1,234,456원",
+              "\$ 1,234,567",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
@@ -63,7 +63,7 @@ class CheckingAccountCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    "이체",
+                    "Transfer",
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -75,7 +75,7 @@ class CheckingAccountCard extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                    "카드이용내역",
+                    "details",
                     textAlign: TextAlign.center,
                   ),
                 )

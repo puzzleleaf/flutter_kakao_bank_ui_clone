@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
 class SavingAccountCard extends StatelessWidget {
+  final Color color;
+
+  const SavingAccountCard({Key key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color(0xffff5a4B),
+        color: color,
       ),
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       height: 160,
       child: Padding(
         padding: const EdgeInsets.only(
@@ -28,7 +32,7 @@ class SavingAccountCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '자유적금',
+                      'Savings Account',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -53,7 +57,7 @@ class SavingAccountCard extends StatelessWidget {
               ],
             ),
             Text(
-              "1,234,567원",
+              "\$ 1,234,567",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,

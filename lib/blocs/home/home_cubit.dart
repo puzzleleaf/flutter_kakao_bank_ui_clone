@@ -6,4 +6,5 @@ class HomeCubit extends Cubit<int> {
   void getMain() => emit(0);
   void getCatalog() => emit(1);
   void getNotification() => emit(2);
+  void getMore() => emit(3);
 }

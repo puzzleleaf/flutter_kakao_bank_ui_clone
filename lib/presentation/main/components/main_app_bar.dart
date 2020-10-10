@@ -28,7 +28,7 @@ class MainAppBar extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text(
-              '내 계좌',
+              'My Account',
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.white,
