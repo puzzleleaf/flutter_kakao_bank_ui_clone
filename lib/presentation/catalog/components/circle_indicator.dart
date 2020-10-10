@@ -12,12 +12,12 @@ class CircleIndicator extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         for (var i = 0; i < count; i++)
-          i == current ? gradientDot() : normalDot()
+          i == current ? selectedDot() : normalDot()
       ],
     );
   }
 
-  Widget gradientDot() {
+  Widget selectedDot() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 5),
       width: 8,
