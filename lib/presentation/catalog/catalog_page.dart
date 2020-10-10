@@ -52,54 +52,56 @@ class _CatalogPageState extends State<CatalogPage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        alignment: Alignment.topCenter,
+      body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
-          constraints: BoxConstraints(
-            maxWidth: 632,
-          ),
-          child: CustomScrollView(
-            controller: _scrollController,
-            key: PageStorageKey<String>("catalog"),
-            slivers: [
-              SliverAppBar(
-                titleSpacing: 10,
-                elevation: 0,
-                title: CatalogAppBar(),
-              ),
-              SliverAppBar(
-                elevation: 0,
-                pinned: true,
-                titleSpacing: 0,
-                backgroundColor: Colors.white,
-                title: CatalogTabBar(
-                  tabController: _tabController,
-                  onTap: _onTapToScroll,
+          alignment: Alignment.topCenter,
+          child: Container(
+            padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+            constraints: BoxConstraints(
+              maxWidth: 632,
+            ),
+            child: CustomScrollView(
+              controller: _scrollController,
+              key: PageStorageKey<String>("catalog"),
+              slivers: [
+                SliverAppBar(
+                  titleSpacing: 10,
+                  elevation: 0,
+                  title: CatalogAppBar(),
                 ),
-              ),
-              SliverList(
-                delegate: SliverChildListDelegate.fixed(
-                  [
-                    CatalogAdCard(
-                      key: adKey,
-                    ),
-                    CatalogAccountCard(
-                      key: accountKey,
-                    ),
-                    CatalogLoanCard(
-                      key: loanKey,
-                    ),
-                    CatalogServiceCard(
-                      key: serviceKey,
-                    ),
-                    CatalogAllianceCard(
-                      key: allianceKey,
-                    ),
-                  ],
+                SliverAppBar(
+                  elevation: 0,
+                  pinned: true,
+                  titleSpacing: 0,
+                  backgroundColor: Colors.white,
+                  title: CatalogTabBar(
+                    tabController: _tabController,
+                    onTap: _onTapToScroll,
+                  ),
                 ),
-              ),
-            ],
+                SliverList(
+                  delegate: SliverChildListDelegate.fixed(
+                    [
+                      CatalogAdCard(
+                        key: adKey,
+                      ),
+                      CatalogAccountCard(
+                        key: accountKey,
+                      ),
+                      CatalogLoanCard(
+                        key: loanKey,
+                      ),
+                      CatalogServiceCard(
+                        key: serviceKey,
+                      ),
+                      CatalogAllianceCard(
+                        key: allianceKey,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -138,7 +140,7 @@ class _CatalogPageState extends State<CatalogPage>
         _scrollController.offset <=
             adHeight + accountHeight + loanHeight + serviceHeight) {
 
-      if (_scrollController.offset ==
+      if (_scrollController.offset >=
           _scrollController.position.maxScrollExtent) {
         _tabController.animateTo(4, duration: const Duration(milliseconds: 0), curve: Curves.linear);
       } else {

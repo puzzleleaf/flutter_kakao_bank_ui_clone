@@ -12,48 +12,46 @@ class HomePage extends StatelessWidget {
     return BlocBuilder<HomeCubit, int>(
       builder: (_, state) {
         return WillPopScope(
-          child: SafeArea(
-            child: Scaffold(
-              bottomNavigationBar: BottomNavigationBar(
-                onTap: (index) {
-                  _changeBottomNav(_, index);
-                },
-                currentIndex: state,
-                type: BottomNavigationBarType.fixed,
-                backgroundColor: Colors.white,
-                showSelectedLabels: false,
-                showUnselectedLabels: false,
-                selectedItemColor: Colors.black,
-                unselectedItemColor: Colors.grey,
-                items: [
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.person,
-                    ),
-                    label: "",
+          child: Scaffold(
+            bottomNavigationBar: BottomNavigationBar(
+              onTap: (index) {
+                _changeBottomNav(_, index);
+              },
+              currentIndex: state,
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: Colors.white,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              selectedItemColor: Colors.black,
+              unselectedItemColor: Colors.grey,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.person,
                   ),
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.apps,
-                    ),
-                    label: "",
+                  label: "",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.apps,
                   ),
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.notifications,
-                    ),
-                    label: "",
+                  label: "",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.notifications,
                   ),
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.more_horiz,
-                    ),
-                    label: "",
+                  label: "",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.more_horiz,
                   ),
-                ],
-              ),
-              body: _buildBody(state),
+                  label: "",
+                ),
+              ],
             ),
+            body: _buildBody(state),
           ),
         );
       },
@@ -61,7 +59,7 @@ class HomePage extends StatelessWidget {
   }
 
   void _changeBottomNav(BuildContext context, int index) {
-    switch(index) {
+    switch (index) {
       case 0:
         context.bloc<HomeCubit>().getMain();
         break;
@@ -78,7 +76,7 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildBody(index) {
-    switch(index) {
+    switch (index) {
       case 0:
         return MainPage();
       case 1:

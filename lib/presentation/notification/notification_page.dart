@@ -8,33 +8,35 @@ class NotificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        alignment: Alignment.topCenter,
+      body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
-          constraints: BoxConstraints(
-            maxWidth: 632,
-          ),
-          child: CustomScrollView(
-            key: PageStorageKey<String>("notification"),
-            slivers: [
-              SliverAppBar(
-                titleSpacing: 10,
-                elevation: 0,
-                pinned: true,
-                backgroundColor: Colors.white,
-                title: NotificationAppBar(),
-              ),
-              SliverList(
-                delegate: SliverChildListDelegate.fixed(
-                  [
-                    NotificationList(),
-                    SizedBox(height: 20,),
-                    OldNotificationList(),
-                  ],
+          alignment: Alignment.topCenter,
+          child: Container(
+            padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+            constraints: BoxConstraints(
+              maxWidth: 632,
+            ),
+            child: CustomScrollView(
+              key: PageStorageKey<String>("notification"),
+              slivers: [
+                SliverAppBar(
+                  titleSpacing: 10,
+                  elevation: 0,
+                  pinned: true,
+                  backgroundColor: Colors.white,
+                  title: NotificationAppBar(),
                 ),
-              ),
-            ],
+                SliverList(
+                  delegate: SliverChildListDelegate.fixed(
+                    [
+                      NotificationList(),
+                      SizedBox(height: 20,),
+                      OldNotificationList(),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
