@@ -1,16 +1,29 @@
-# kakao_bank
+# Flutter KakaoBank UI Clone
 
-A new Flutter application.
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-## Getting Started
+The Kakao Bank app is a banking application in Korea.
+<p align="center">
+ <img src="readme/main.gif" width='1024'/>
+</p>
 
-This project is a starting point for a Flutter application.
+<p align="center">
+ <img src="readme/1.png" width='1024'/>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Youtube
+[Flutter KakaoBank UI Clone - Speed Code](https://youtu.be/FfQOeCwY-Oc)
+<p align="center">
+ <img src="readme/youtube.png" width='1024'/>
+</p>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Reference
+* KakaoBank : https://www.kakaobank.com
+
+
+## Packages
+* flutter_bloc : https://pub.dev/packages/flutter_bloc
+
+## Keyword
+* SliverAppBar, SliverList, SliverChildListDelegate, TabBar, CustomScrollView, PageStorageKey, GlobalKey, ensureVisible, findRenderObject
